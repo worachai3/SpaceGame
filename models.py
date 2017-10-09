@@ -21,6 +21,8 @@ class World:
         self.ship = Ship(self, 100, 100)
         self.gold = Gold(self, 200, 200)
 
+        self.score = 0
+
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.SPACE:
             self.ship.switch_direction()
@@ -29,6 +31,7 @@ class World:
         self.ship.update(delta)
 
         if self.ship.hit(self.gold, 15):
+            self.score += 1
             self.gold.random_location()
 
 

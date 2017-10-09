@@ -40,6 +40,10 @@ class SpaceGameWindow(arcade.Window):
         self.gold_sprite.draw()
         self.ship_sprite.draw()
 
+        arcade.draw_text(str(self.world.score),
+                         self.width - 30, self.height - 30,
+                         arcade.color.WHITE, 20)
+
     def on_key_press(self, key, key_modifiers):
         self.world.on_key_press(key, key_modifiers)
 
